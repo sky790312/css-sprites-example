@@ -1,0 +1,47 @@
+.browser {
+	width: 620px;
+	height: 130px;
+	margin: 60px auto;
+	*margin-left: 210px; /* for IE 7 and less */
+	list-style-type : none;
+}
+
+.browser > li { float: left;}
+
+.browser > li a {
+	width: 115px;
+	text-decoration: none;
+	display: block;
+}
+
+.browser > li a div {
+	background-image: url('browser_ico_sprites.png');
+	width: 105px;
+	height: 110px;
+	margin: 0 auto;
+}
+
+.chrome_ico { background-position: 0 0;}
+
+.ie_ico { background-position: 0 -150px ;}
+
+.firefox_ico { background-position: 0 -300px ;}
+
+.safari_ico { background-position: 0 -450px ;}
+
+.opera_ico { background-position: 0 -600px ;}
+
+.browser > li:hover > a div {
+	width: 115px;
+	height: 120px;
+}
+
+.browser > li:hover > a > .chrome_ico { background-position: 150px 0;}
+
+.browser > li:hover > a > .ie_ico { background-position: 150px -150px;}
+
+.browser > li:hover > a > .firefox_ico { background-position: 150px -300px;}
+
+.browser > li:hover > a > .safari_ico { background-position: 150px -450px;}
+
+.browser > li:hover > a > .opera_ico { background-position: 150px -600px;}
