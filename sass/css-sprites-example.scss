@@ -1,0 +1,155 @@
+.item--css-clip .demo {
+  width: 200px;
+  height: 250px;
+  }
+.item--css-clip .has-mask {
+  position: absolute;
+  clip: rect(10px, 190px, 190px, 10px);
+  }
+.item--css-mask img {
+  mask-image: url(http://img-fotki.yandex.ru/get/9492/5091629.9d/0_80e74_9f303e3d_M.png), 
+  linear-gradient(-45deg,
+    black 20%, transparent 50%);
+  mask-repeat: space;
+  }
+
+.item--svg-clip-path-svg image {
+  clip-path: url(#clipping);
+}
+
+.item--svg-mask-svg image{
+  mask: url(#masking);
+}
+
+.item--svg-fill text {
+  fill: url(#pattern);
+}
+
+.demo,
+#clipping,
+#masking text {
+  font: bold italic 7em/1.5 Georgia;
+  }
+
+/* Common
+------------------------------------------- */
+
+body {
+  font: 12px/1.4 "Trebuchet MS", Arial, sans-serif;
+}
+a {
+  color: tomato;
+  }
+h3 {
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  line-height: 1.4;
+
+  text-shadow: 1px 1px 0 white,
+               2px 2px 0 #CCC;
+  font-size: 2.5em;
+  font-style: italic;
+  color: #777;
+}
+
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  }
+
+.wrapper {
+  width: 90%;
+  min-width: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  padding-right: 3em;
+  border-bottom: 1px solid #DDD;
+  overflow: hidden;
+}
+
+/* css hover background */
+.demo {
+  position: relative;
+  float: left;
+  margin-right: 30px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(http://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg) no-repeat;
+    opacity: 0;
+    transition: .7s;
+  }
+
+  .item:hover &:before {
+    opacity: .4;
+  }
+}
+
+.text {
+  padding-left: 230px;
+}
+
+
+
+.browser {
+  width: 620px;
+  height: 130px;
+  margin: 60px auto;
+  *margin-left: 210px; /* for IE 7 and less */
+  list-style-type : none;
+}
+
+.browser > li { float: left;}
+
+.browser > li a {
+  width: 115px;
+  text-decoration: none;
+  display: block;
+}
+
+.browser > li a div {
+  background-image: url('../browser_ico_sprites.png');
+  width: 105px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.chrome_ico { background-position: 0 0;}
+
+.ie_ico { background-position: 0 -150px ;}
+
+.firefox_ico { background-position: 0 -300px ;}
+
+.safari_ico { background-position: 0 -450px ;}
+
+.opera_ico { background-position: 0 -600px ;}
+
+.browser > li:hover > a div {
+  width: 115px;
+  height: 120px;
+}
+
+.browser > li:hover > a > .chrome_ico { background-position: 150px 0;}
+
+.browser > li:hover > a > .ie_ico { background-position: 150px -150px;}
+
+.browser > li:hover > a > .firefox_ico { background-position: 150px -300px;}
+
+.browser > li:hover > a > .safari_ico { background-position: 150px -450px;}
+
+.browser > li:hover > a > .opera_ico { background-position: 150px -600px;}

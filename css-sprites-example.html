@@ -4,11 +4,116 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
 	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1, user-scalable=1">
+	<link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	<link href="css-sprites-example.css" rel="stylesheet">
+  <link href="stylesheets/css-sprites-example.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
+	<svg class="svg-defs">
+	  <defs>
+			<!--svg clip path-->
+      <clipPath id="clipping">
+				<!--clip star by svg -->
+        <polygon id="Star" points="100,10 40,180 190,60 10,60 160,180 100"/>
+				<!--clip text by svg -->
+        <text x="0" y="3.2em">Text</text>
+      </clipPath>
+
+			<!--svg linear gradient-->
+      <linearGradient id="gradient" x1="0" y1="0" x2 ="110%" y2="0%">
+        <stop stop-color="#fff" offset="0"/><stop stop-color="#fff" offset="10%"/>
+        <stop stop-color="#AAA" offset="10%"/><stop stop-color="#AAA" offset="20%"/>
+        <stop stop-color="#777" offset="20%"/><stop stop-color="#777" offset="30%"/>
+        <stop stop-color="#333" offset="30%"/><stop stop-color="#333" offset="40%"/>
+        <stop stop-color="#000" offset="40%"/><stop stop-color="#000" offset="50%"/>
+        <stop stop-color="#fff" offset="50%"/><stop stop-color="#fff" offset="60%"/>
+        <stop stop-color="#AAA" offset="60%"/><stop stop-color="#AAA" offset="70%"/>
+        <stop stop-color="#777" offset="70%"/><stop stop-color="#777" offset="80%"/>
+        <stop stop-color="#333" offset="80%"/><stop stop-color="#333" offset="90%"/>
+        <stop stop-color="#000" offset="90%"/><stop stop-color="#000" offset="100%"/>
+      </linearGradient>
+			<!--svg linear gradient-->
+
+			<!--svg mask-->
+      <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+        <rect y="0" width="1" height="1" fill="url(#gradient)" />
+
+        <circle cx=".5" cy=".5" r=".42" fill="black" />
+        <circle cx="0" cy=".5" r=".32" fill="black" />
+        <circle cx="1" cy=".5" r=".32" fill="black" />
+
+        <circle cx="0" cy=".5" r=".3" fill="gray" />
+        <circle cx=".5" cy=".5" r=".4" fill="gray" />
+        <circle cx="1" cy=".5" r=".3" fill="gray" />
+
+        <circle cx="0" cy=".5" r=".25" fill="white" />
+        <circle cx=".5" cy=".5" r=".35" fill="white" />
+        <circle cx="1" cy=".5" r=".25" fill="white" />
+      </mask>
+			<!--svg mask-->
+
+			<!--svg fill-->
+      <pattern id="pattern"
+               patternUnits="userSpaceOnUse"
+               width="200" height="300"
+               viewbox="0 0 200 300">
+        <image xlink:href="http://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg" width="200" height="300" />
+      </pattern>
+			<!--svg fill-->
+	  </defs>
+	</svg>
+
+	<div class="wrapper">
+	  <div class="item item--css-clip">
+	    <div class="demo">
+	      <img src="http://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg" alt="" class="has-mask"/>
+	    </div>
+	    <div class="text">
+	      <h3>CSS clip</h3>
+	    </div>
+	  </div>
+	 <!-- ********* -->
+	 <div class="item item--svg-clip-path-svg">
+	    <div class="demo">
+	      <svg width="200" height="300">
+	        <image xlink:href="http://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg" width="200" height="300" />
+	      </svg>
+	    </div>
+	    <div class="text">
+	      <h3>SVG clip-path for SVG elements</h3>
+	    </div>
+	  </div>
+	 <!-- ********* -->
+	  <div class="item item--svg-mask-svg">
+	    <div class="demo">
+	      <svg width="200" height="300">
+	      <image xlink:href="http://img-fotki.yandex.ru/get/5607/5091629.6b/0_612e6_b9039c0d_M.jpg"
+	      width="200" height="300"
+	      /></svg>
+	    </div>
+	    <div class="text">
+	       <h3>SVG mask for SVG elements</h3>
+	    </div>
+	  </div>
+	 <!-- ********* -->
+	  <div class="item item--svg-fill">
+	    <div class="demo">
+	      <svg width="200" height="200">
+	        <text x="0" y="1em">Text</text>
+	      </svg>
+	    </div>
+	    <div class="text">
+	       <h3>SVG fill</h3>
+	    </div>
+	  </div>
+	</div>
+
 	<div class="content">
 		<div class="container text-center oldBrowserContent">
 			<ul class="browser">
@@ -19,5 +124,6 @@
 			    <li><a href="http://www.opera.com/zh-tw" target="_blank"><div class="opera_ico"></div><p>Opera</p></a></li>
 			</ul>
 		</div>
+	</div>
 </body>
 </html>
